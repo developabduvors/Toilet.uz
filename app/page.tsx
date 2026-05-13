@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useToilets } from '@/context/ToiletsContext';
+import { AuthButton } from '@/components/AuthButton';
 import type { LocationType, PriceType } from '@/types';
 
 export default function Home() {
@@ -28,11 +29,14 @@ export default function Home() {
 
   return (
     <main className="flex flex-1 flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
-      <header className="border-b border-zinc-200 dark:border-zinc-800 px-6 py-4">
-        <h1 className="text-2xl font-bold tracking-tight">Toilet.uz</h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          Eng yaqin hojatxonalarni toping
-        </p>
+      <header className="border-b border-zinc-200 dark:border-zinc-800 px-6 py-4 flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">Toilet.uz</h1>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            Eng yaqin hojatxonalarni toping
+          </p>
+        </div>
+        <AuthButton />
       </header>
 
       <section className="px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 space-y-3">

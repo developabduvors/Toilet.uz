@@ -1,13 +1,18 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   typescript: {
-    // TypeScript xatolariga qaramasdan build qilishga ruxsat berish
+    // Build paytida TS xatolarini blocker qilmaslik (CI'da alohida tekshiring)
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // ESLint xatolarini ham e'tiborsiz qoldirish (xavfsizlik uchun)
-    ignoreDuringBuilds: true,
+  images: {
+    remotePatterns: [
+      // Google profil rasmi
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      // Cloudinary (kelajakda)
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+    ],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
